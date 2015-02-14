@@ -3,6 +3,11 @@ title: "proj2"
 output: html_document
 ---
 
+
 ```{r}
 source("../01 Data/proj2.R", echo = TRUE)
+```
+
+```{r}
+source("../02 Data/datawrang.R", echo = TRUE)
 ```
