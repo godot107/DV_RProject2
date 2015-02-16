@@ -9,3 +9,15 @@ baby %>% select(AGE, BWT) %>% tbl_df
 
 #BWT are in grams.
 baby %>% group_by(RACE) %>% summarise(mean = mean(BWT), n = n()) %>% ggplot(aes(x = RACE, y = mean)) + geom_point()
+
+
+
+tbl_df(baby)
+baby %>% group_by(RACE) %>% select(SMOKE, RACE, PTL) %>% filter(SMOKE == "yes")  %>% tbl_df
+
+
+#Plot 4 Does race/age affect who smokes?
+baby %>% select(RACE, AGE, SMOKE) %>% ggplot(aes(x=RACE, y=AGE, color= SMOKE)) + geom_point() 
+
+#Plot  Does smoking affect baby weight? 
+baby %>% select(AGE, BWT, SMOKE) %>% ggplot(aes(x=AGE, y=BWT, color= SMOKE)) + geom_point()
