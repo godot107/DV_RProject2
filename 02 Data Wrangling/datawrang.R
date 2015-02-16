@@ -7,13 +7,14 @@ baby <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.14
 
 baby %>% select(AGE, BWT) %>% tbl_df
 
-#BWT are in grams.
-baby %>% group_by(RACE) %>% summarise(mean = mean(BWT), n = n()) %>% ggplot(aes(x = RACE, y = mean)) + geom_point()
+
+#Plot 2 does smoking cause hyper tension? 
+#PRETTY SURE THEYRE LYING ABOUT THEIR HYPERTENSION!! lol
+baby %>% select(RACE, LWT, AGE, SMOKE, HT) %>% ggplot(aes(x=AGE, y=LWT, color= SMOKE)) + geom_point() + facet_wrap(~HT)
 
 
-
-tbl_df(baby)
-baby %>% group_by(RACE) %>% select(SMOKE, RACE, PTL) %>% filter(SMOKE == "yes")  %>% tbl_df
+#Plot 3 Age vs Last weight. Is there a trend among race?
+baby %>% select(RACE, AGE, LWT) %>% ggplot(aes(x=AGE, y=LWT, color= RACE)) + geom_point() 
 
 
 #Plot 4 Does race/age affect who smokes?
