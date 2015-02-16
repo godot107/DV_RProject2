@@ -9,5 +9,5 @@ source("../01 Data/proj2.R", echo = TRUE)
 ```
 
 ```{r}
-source("../02 Data/datawrang.R", echo = TRUE)
+source("../02 Data Wrangling/datawrang.R", echo = TRUE)
 ```
